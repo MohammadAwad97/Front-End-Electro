@@ -22,12 +22,6 @@ function Header() {
   //     setError(e.message);
   //   }
 
-
-
-
-
-
-
   // }, []);
 
   return (
