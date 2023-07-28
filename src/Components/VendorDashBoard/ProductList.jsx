@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 export default function ProductList() {
   // this for save product from Api
-  const [product, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
 
   //   here i will fetch data from Api and store them in state
   const fetchData = async () => {
     try {
-      const response = await axios.get();
-      setProduct(response.data);
+      const response = await axios.get(
+        "http://127.0.0.1:7000/api/v1/products/vendor/64ba8084db21730031b5896a"
+      );
+      console.log(response.data.vendorProducts);
+      setProducts(response.data.vendorProducts);
     } catch (err) {
       console.log(err);
     }
@@ -21,31 +24,28 @@ export default function ProductList() {
   // here  handel if vendor want to remove product
   const removeProduct = async (id) => {
     try {
-      await axios.delete(`/${id}`);
-      setProduct(
-        product.filter((el) => {
-          el.id !== id;
-        })
-      );
+      await axios.delete(`http://127.0.0.1:7000/api/v1/products/${id}`);
+
+      setProducts(products.filter((el) => el._id !== id));
     } catch (err) {
       console.log(err);
     }
   };
 
   // here i want extract all data from array
-  const products = product.map((el) => {
+  const product = products.map((el) => {
     return (
       <tr
-        key={el.id}
+        key={el._id}
         className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
       >
         <th
           scope="row"
           className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
         >
-          {el.Name}
+          {el.name}
         </th>
-        <td className="px-6 py-4">{el.Quantity}</td>
+        <td className="px-6 py-4">{el.quantity}</td>
         <td className="px-6 py-4">{el.cat}</td>
         <td className="px-6 py-4">`$${el.price}`</td>
         <td className="px-6 py-4 flex gap-2">
@@ -58,7 +58,7 @@ export default function ProductList() {
             Edit
           </p>
           <p
-            onClick={removeProduct(el.id)}
+            onClick={() => removeProduct(el._id)}
             className="font-medium text-red-600 dark:text-red-500 hover:underline"
           >
             Remove
@@ -125,7 +125,7 @@ export default function ProductList() {
               </th>
             </tr>
           </thead>
-          <tbody>{products}</tbody>
+          <tbody>{product}</tbody>
         </table>
       </div>
     </div>

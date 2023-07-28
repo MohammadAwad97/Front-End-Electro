@@ -16,7 +16,15 @@ export default function AddProduct() {
   // console.log(productData);
   const handelSubmit = async () => {
     try {
-      const newProduct = await axios.post("", productData);
+      console.log("as");
+      // vendor id by session storage
+      const newProduct = await axios.post(
+        "http://127.0.0.1:7000/api/v1/products",
+        {
+          ...productData,
+          vendorId: "64ba8084db21730031b5896a",
+        }
+      );
       console.log("Product add successfully", newProduct);
     } catch (err) {
       console.log(err);
@@ -111,7 +119,7 @@ export default function AddProduct() {
           />
         </div>
         <button
-          onSubmit={handelSubmit}
+          onClick={handelSubmit}
           type="button"
           className="  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
