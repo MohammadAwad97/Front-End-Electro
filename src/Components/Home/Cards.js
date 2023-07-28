@@ -1,6 +1,6 @@
-import React from 'react'
-import Card from './Card'
-import './Cards.css'
+import React from "react";
+import Card from "./Card";
+import "./Cards.css";
 
 function Cards() {
   const products = [
@@ -83,28 +83,29 @@ function Cards() {
         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg",
       imageAlt:
         "Hand holding black machined steel mechanical pencil with brass tip and top.",
-    }]
+    },
+  ];
 
   return (
-    <section className='explore_Products'>
-      <hr/>
+    <section className="explore_Products">
+      <hr />
       <div className="title">
         <div className="redBox"></div>
         <p>Our Products</p>
       </div>
-      <h2 className='text-4xl'>Explore Our Products</h2>
-    <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
-      {products.map((product) => (
-        <Card key={product.id} product={product} />
-      ))}
-    </div>
-    <div class="flex justify-center mt-6">
-  <button class="bg-[#db4444] hover:bg-[#B43838] text-white font-bold py-3 px-4 rounded w-60">
-    View All Products
-  </button>
-</div>
+      <h2 className="text-4xl">Explore Our Products</h2>
+      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
+        {products.map((product) => (
+          <Card key={product.id} product={product} />
+        ))}
+      </div>
+      <div class="flex justify-center mt-6">
+        <button class="bg-[#db4444] hover:bg-[#B43838] text-white font-bold py-3 px-4 rounded w-60">
+          View All Products
+        </button>
+      </div>
     </section>
-  )
+  );
 }
 
 export default Cards;

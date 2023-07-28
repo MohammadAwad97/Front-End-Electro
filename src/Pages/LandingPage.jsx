@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../Components/Header/Header";
 import Slider from "../Components/Slider/Slider";
-import Cards from "../Components/Cards/Cards";
+import Cards from "../Components/Home/Cards";
 // import Card from '../Components/Cards/Card'
-import Category from "../Components/Category/Category";
+import Category from "../Components/Home/Category";
 import Footer from "../Components/Footer/Footer";
-import Features from "../Components/Features/Features";
-import AboutUs from "../Components/About us/AboutUs";
+import Features from "../Components/Home/Features";
+import AboutUs from "../Components/Home/AboutUs";
 
 function LandingPage() {
   return (
