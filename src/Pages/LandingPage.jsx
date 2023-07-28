@@ -7,17 +7,22 @@ import Category from "../Components/Home/Category";
 import Footer from "../Components/Footer/Footer";
 import Features from "../Components/Home/Features";
 import AboutUs from "../Components/Home/AboutUs";
+import Login from "../Components/Login/Login"
+import Register from "../Components/Register/Register";
 
 function LandingPage() {
   return (
     <div>
-      <Header />
+      {/* <Login/> */}
+      {/* <Header />
       <Slider />
       <AboutUs />
       <Cards />
       <Category />
       <Features />
-      <Footer />
+      <Footer /> */}
+
+      {/* <Register/> */}
     </div>
   );
 }
