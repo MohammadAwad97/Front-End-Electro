@@ -6,24 +6,24 @@ import axios from 'axios';
 
 function Header() {
   const [userActive, setUserActive] = useState({});
+  const [isShow, setIsShow] = useState(false);
 
-  const userId = sessionStorage.getItem('currentUser');
+  const userId = sessionStorage.getItem('currentUserId');
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const res = await axios.get(
-          `http://127.0.0.1:7000/api/v1/customers/${userId}`
-        );
-        // console.log(res);
-        setUserActive(res.data.customer);
-      } catch (e) {
-        // console.log(e);
-      }
-    };
-    fetchUser();
-  }, []);
-
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         `http://127.0.0.1:7000/api/v1/customers/${userId}`
+  //       );
+  //       setUserActive(res.data.customer);
+  //       setIsShow(!isShow); // Set isShow to false after fetching user data
+  //     } catch (e) {
+  //       // Handle errors
+  //     }
+  //   };
+  //   fetchUser();
+  // }, []);
   return (
     <>
       <nav className="bg-[#272525] border-gray-200 dark:bg-gray-900">
@@ -34,7 +34,7 @@ function Header() {
               ElectroTrendy
             </span>
           </Link>
-          {userId ? (
+          {isShow ? (
             <>
               <div className="flex items-center md:order-2">
                 <button
@@ -57,7 +57,7 @@ function Header() {
                   id="user-dropdown"
                 >
                   <div className="px-4 py-3">
-                    <span className="block text-sm dark:text-white">
+                    <span className="block text-sm text-gray-900 dark:text-white">
                       {userActive.name}
                     </span>
                     <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
@@ -70,6 +70,7 @@ function Header() {
                         to="/login"
                         onClick={() => {
                           sessionStorage.clear();
+                          setIsShow(!isShow);
                         }}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                       >

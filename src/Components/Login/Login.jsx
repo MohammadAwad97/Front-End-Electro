@@ -1,7 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+  const loginNav = useNavigate();
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handelInput = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handelSubmit = async () => {
+    try {
+      const res = await axios.post(
+        `http://localhost:7000/api/v1/customers/signin`,
+        user
+      );
+      console.log(res);
+      sessionStorage.setItem('currentUser', res.data.token);
+      sessionStorage.setItem('currentUserId', res.data.id);
+      loginNav('/');
+    } catch (err) {
+      console.log(err);
+      Swal.fire('invalid password or email ');
+    }
+  };
   return (
     <div className="h-full bg-gradient-to-tl from-[#db4444] to-indigo-900 w-full py-16 px-4">
       <div className="flex flex-col items-center justify-center">
@@ -22,7 +50,7 @@ const Login = () => {
               className="text-sm font-medium leading-none underline text-gray-800 cursor-pointer"
             >
               {' '}
-              <Link to="#"> Sign up here</Link>
+              <Link to="/register"> Sign up here</Link>
             </span>
           </p>
           <button
@@ -69,7 +97,9 @@ const Login = () => {
               Email
             </lable>
             <input
-              placeholder="Email or Phone Number"
+              onChange={handelInput}
+              name="email"
+              placeholder="Email "
               aria-label="enter email adress"
               type="email"
               className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
@@ -81,6 +111,8 @@ const Login = () => {
             </lable>
             <div className="relative flex items-center justify-center">
               <input
+                name="password"
+                onChange={handelInput}
                 placeholder="Password"
                 aria-label="enter Password"
                 type="password"
@@ -104,6 +136,7 @@ const Login = () => {
           </div>
           <div className="mt-8">
             <button
+              onClick={handelSubmit}
               aria-label="create my account"
               className=" hover:bg-[#B43838] justify-center rounded-md bg-[#db4444]  text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600text-sm font-semibold leading-none text-white focus:outline-none bg-[#db4444] border rounded  py-4  w-full"
             >
@@ -117,71 +150,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// <>
-//   <div className="flex min-h-full flex-1  flex-col md:flex-col lg:flex-row justify-center px-6 pt-12 lg:px-8">
-//   <img class="max-w-fit max-w-screen-md h-3/6 sm:mx-auto max-w-md max-w-lg" src={LoginImg} alt="image description"/>
-
-//     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-//     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-//       <h2 className="mt-10 mb-5 text-left text-2xl font-bold leading-9 tracking-tight text-gray-900">
-//         Log in to Exclusive
-//       </h2>
-//     </div>
-//       <form className="space-y-6" action="#" method="POST">
-//         <div>
-//           <label
-//             htmlFor="email"
-//             className="block text-sm font-medium leading-6 text-gray-900"
-//           >
-//             Enter your details below
-//           </label>
-//           <div className="mt-2">
-//             <input
-//               id="email"
-//               name="email"
-//               type="email"
-//               autoComplete="email"
-//               required
-//               placeholder="Email or Phone Number"
-//               className="border-b-2 border-gray-400 block w-full  py-1.5 bg-white outline-0 px-1"
-//             />
-//           </div>
-//         </div>
-
-//         <div>
-//           <div className="mt-2">
-//             <input
-//               id="password"
-//               name="password"
-//               type="password"
-//               autoComplete="current-password"
-//               placeholder="Password"
-//               required
-//               className="border-b-2 border-gray-400 block w-full  py-1.5 bg-white outline-0 px-1"
-//             />
-//           </div>
-//         </div>
-
-//         <div className="flex items-center justify-between">
-//           <button
-//             type="submit"
-//             className="flex  w-40 py-3 px-3 hover:bg-[#B43838] justify-center rounded-md bg-[#db4444]  text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-//           >
-//             Log in
-//           </button>
-//           <div className="flex items-center justify-between">
-//             <div className="text-sm">
-//               <Link
-//                 to="#"
-//                 className="font-semibold text-[#db4444] hover:text-[#B43838]"
-//               >
-//                 Forgot password?
-//               </Link>
-//             </div>
-//           </div>
-//         </div>
-//       </form>
-//     </div>
-//   </div>
-// </>

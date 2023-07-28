@@ -1,5 +1,5 @@
-import React from "react";
-import "./Category.css";
+import React from 'react';
+import './Category.css';
 
 function Category() {
   return (
@@ -13,15 +13,18 @@ function Category() {
       <section className="cate_Cards">
         <div className="cate_datail">
           <i class="fa-solid fa-mobile-screen"></i>
+
           <p>Phones</p>
         </div>
         <div className="cate_datail">
           <i class="fa-solid fa-desktop"></i>
+
           <p>Computers</p>
         </div>
         <div className="cate_datail">
           <i class="fa-regular fa-clock"></i>
-          <p>Watchs</p>
+
+          <p>Watches</p>
         </div>
         <div className="cate_datail">
           <i class="fa-solid fa-camera"></i>
