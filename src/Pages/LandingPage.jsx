@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Components/Header/Header";
-import Slider from "../Components/Slider/Slider";
+import Slider from "../Components/Home/Slider";
 import Cards from "../Components/Home/Cards";
 // import Card from '../Components/Cards/Card'
 import Category from "../Components/Home/Category";

@@ -30,7 +30,7 @@ function Slider() {
         {/* Item 3 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="/docs/images/carousel/carousel-3.svg"
+            src="https://images.pexels.com/photos/7857560/pexels-photo-7857560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -38,7 +38,7 @@ function Slider() {
         {/* Item 4 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="/docs/images/carousel/carousel-4.svg"
+            src="https://images.pexels.com/photos/7857560/pexels-photo-7857560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -46,7 +46,7 @@ function Slider() {
         {/* Item 5 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="/docs/images/carousel/carousel-5.svg"
+            src="https://images.pexels.com/photos/7857560/pexels-photo-7857560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
