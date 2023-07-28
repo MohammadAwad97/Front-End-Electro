@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.explore_Products {
+    padding-top: 0;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: 0;
+}
+
+.explore_Products > hr {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.title {
+    display: flex;
+    padding-top: 1em;
+    align-items: center;
+    width: 20%;
+    gap: 1em;
+  }
+
+
+.explore_Products > h2 {
+    padding-top: 0.5em;
+    margin-bottom: 1em;
+}
+
