@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const login = useNavigate();
@@ -12,23 +13,26 @@ const Register = () => {
     confirmPassword: '',
   });
 
-  const [error, setError] = useState('');
-
   const handleInput = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post('http://127.0.0.1:7000/api/v1/customers',user);
+      const res = await axios.post(
+        'http://127.0.0.1:7000/api/v1/customers/signup',
+        user
+      );
 
       console.log(res);
       login('/');
 
-      sessionStorage.setItem('currentUser', res.data.data.customer._id);
+      sessionStorage.setItem('currentUser', res.data.token);
+      sessionStorage.setItem('currentUserId', res.data.data.customer._id);
     } catch (e) {
       console.log(e);
-      setError(e.message);
+
+      Swal.fire(e.message);
     }
   };
 
