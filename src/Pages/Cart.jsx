@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import CartContext from '../store/cartContext';
 const Cart = () => {
   const { cart, getCart, addItem, removeItem, removeAllItems, totalPrice } =

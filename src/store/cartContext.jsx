@@ -13,7 +13,7 @@ export function CartProvider({ children }) {
 
   const getCart = () => {
     axios
-      .get(`http://127.0.0.1:7000/api/v1/cart/64c53da3474eb8afaea05f7f`)
+      .get(`http://127.0.0.1:7000/api/v1/cart/${customerId}`)
       .then(({ data }) => {
         setCart(data.cart.productList);
       });
@@ -21,18 +21,24 @@ export function CartProvider({ children }) {
 
   //add  to the cart
   const addItem = async (productId) => {
-    // if (!currentUserId) return navigate('/signIn');
-    const { data } = await axios.post(
-      `http://127.0.0.1:7000/api/v1/cart/addItem/64c53da3474eb8afaea05f7f`,
-      {
-        productId,
-      }
-    );
-    setCart(data.productList);
+    // console.log(productId);
+    try {
+      // if (!currentUserId) return navigate('/signIn');
+      const { data } = await axios.post(
+        `http://127.0.0.1:7000/api/v1/cart/addItem/${customerId}`,
+        {
+          productId,
+        }
+      );
+
+      setCart(data.productList);
+    } catch (err) {
+      console.log(err);
+    }
   };
   const removeItem = async (productId) => {
     const { data } = await axios.patch(
-      `http://127.0.0.1:7000/api/v1/cart/removeItem/64c53da3474eb8afaea05f7f`,
+      `http://127.0.0.1:7000/api/v1/cart/removeItem/${customerId}`,
       {
         productId,
       }
@@ -40,10 +46,9 @@ export function CartProvider({ children }) {
     setCart(data.productList);
   };
 
-
   const removeAllItems = async () => {
     await axios.patch(
-      `http://127.0.0.1:7000/api/v1/cart/removeAllItems/64c53da3474eb8afaea05f7f`
+      `http://127.0.0.1:7000/api/v1/cart/removeAllItems/${customerId}`
     );
     setCart([]);
   };
