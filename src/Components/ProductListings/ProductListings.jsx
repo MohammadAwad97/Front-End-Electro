@@ -13,14 +13,18 @@ const sortOptions = [
   { name: "Price: High to Low", href: "#", current: false },
 ];
 const subCategories = [
-  { name: "Woman’s Fashion", href: "#" },
-  { name: "Men’s Fashion", href: "#" },
-  { name: "Electronics", href: "#" },
-  { name: "Home & Lifestyle", href: "#" },
-  { name: "Groceries & Pets", href: "#" },
-  { name: "Health & Beauty", href: "#" },
-  { name: "Baby’s & Toys", href: "#" },
-  { name: "Sports & Outdoor", href: "#" },
+  { name: "TVs, Audio & Video", href: "#" },
+  { name: "Mobiles & Tablets", href: "#" },
+  { name: "Computers & Laptops", href: "#" },
+  { name: "Gaming Consoles", href: "#" },
+  { name: "Cameras & Drones", href: "#" },
+  { name: "Home Appliances", href: "#" },
+
+  { name: "Car Electronics & GPS", href: "#" }
+  
+  
+  
+  
 ];
 
 function classNames(...classes) {
@@ -32,8 +36,6 @@ function ProductListings() {
 
   return (
     <div className="bg-white">
-      <div>
-        {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -77,7 +79,6 @@ function ProductListings() {
                     </button>
                   </div>
 
-                  {/* Filters */}
                   <form className="mt-4 border-t border-gray-200">
                     <h3 className="sr-only">Categories</h3>
                     <ul
@@ -86,7 +87,7 @@ function ProductListings() {
                     >
                       {subCategories.map((category) => (
                         <li key={category.name}>
-                          <a href={category.href} className="block px-2 py-3">
+                          <a href={category.href} className="block px-2 py-3 ">
                             {category.name}
                           </a>
                         </li>
@@ -100,7 +101,7 @@ function ProductListings() {
         </Transition.Root>
 
         <main className="max-w-[1500px] px-4 sm:px-6 lg:px-8">
-          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
+          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-10">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">
               New Arrivals
             </h1>
@@ -194,7 +195,7 @@ function ProductListings() {
             </div>
           </section>
         </main>
-      </div>
+   
     </div>
   );
 }
