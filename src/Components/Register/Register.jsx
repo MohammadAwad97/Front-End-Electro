@@ -38,7 +38,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="h-full bg-gradient-to-tl from-[#db4444] to-indigo-900 w-full py-16 px-4">
+      <div className="h-full bg-gradient-to-tl from-[#f2ee1b] to-[#272525] w-full py-16 px-4">
         <div className="flex flex-col items-center justify-center">
           <div className="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
             <p
@@ -188,7 +188,7 @@ const Register = () => {
               <button
                 onClick={handleSubmit}
                 aria-label="create my account"
-                className=" hover:bg-[#B43838] justify-center rounded-md bg-[#db4444]  text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600text-sm font-semibold leading-none text-white focus:outline-none bg-[#db4444] border rounded  py-4  w-full"
+                className=" hover:bg-[#b5b188]   hover:text-black  justify-center rounded-md   text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600text-sm font-semibold leading-none text-white focus:outline-none border rounded  py-4  w-full  bg-[#272525]"
               >
                 Create my account
               </button>

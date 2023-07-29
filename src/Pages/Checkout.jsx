@@ -21,14 +21,7 @@ const Checkout = () => {
                 Check out
               </p>
             </div>
-            <div className="mt-2">
-              <Link
-                to="#"
-                className="text-base leading-4 underline  hover:text-gray-800 text-gray-600"
-              >
-                Back to my bag
-              </Link>
-            </div>
+
             <div className="mt-12">
               <p className="text-xl font-semibold leading-5 text-gray-800">
                 Shipping Details
