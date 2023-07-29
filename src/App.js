@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 import {
   Footer,
   Header,
@@ -9,7 +9,8 @@ import {
   MainDashBoard,
   NotFound,
   Checkout,
-} from "./Pages/index";
+} from './Pages/index';
+import CartPage from './Pages/CartPage';
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/maindashboard" element={<MainDashBoard />} />
         <Route path="/product" element={<ProductListingsPage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
       <Footer />
     </>

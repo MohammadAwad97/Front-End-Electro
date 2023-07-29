@@ -188,7 +188,7 @@ const Register = () => {
               <button
                 onClick={handleSubmit}
                 aria-label="create my account"
-                className=" hover:bg-[#B43838] justify-center rounded-md bg-[#db4444]  text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600text-sm font-semibold leading-none text-white focus:outline-none bg-[#db4444] border rounded  py-4  w-full"
+                className=" hover:bg-[#B43838] justify-center  bg-[#db4444]  text-sm   text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600text-sm font-semibold leading-none focus:outline-none  border rounded  py-4  w-full"
               >
                 Create my account
               </button>

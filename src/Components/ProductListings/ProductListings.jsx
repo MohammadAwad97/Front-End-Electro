@@ -1,34 +1,47 @@
-import { Fragment, useState } from "react";
-import { Dialog, Menu, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon, FunnelIcon } from "@heroicons/react/20/solid";
-import Cards from "./Cards";
-import Pagination from "./Pagination";
+import { Fragment, useState, useEffect } from 'react';
+import { Dialog, Menu, Transition } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, FunnelIcon } from '@heroicons/react/20/solid';
+import Cards from './Cards';
+import Pagination from './Pagination';
+import axios from 'axios';
 
 const sortOptions = [
-  { name: "Most Popular", href: "#", current: true },
-  { name: "Best Rating", href: "#", current: false },
-  { name: "Newest", href: "#", current: false },
-  { name: "Price: Low to High", href: "#", current: false },
-  { name: "Price: High to Low", href: "#", current: false },
+  { name: 'Most Popular', href: '#', current: true },
+  { name: 'Best Rating', href: '#', current: false },
+  { name: 'Newest', href: '#', current: false },
+  { name: 'Price: Low to High', href: '#', current: false },
+  { name: 'Price: High to Low', href: '#', current: false },
 ];
 const subCategories = [
-  { name: "Woman’s Fashion", href: "#" },
-  { name: "Men’s Fashion", href: "#" },
-  { name: "Electronics", href: "#" },
-  { name: "Home & Lifestyle", href: "#" },
-  { name: "Groceries & Pets", href: "#" },
-  { name: "Health & Beauty", href: "#" },
-  { name: "Baby’s & Toys", href: "#" },
-  { name: "Sports & Outdoor", href: "#" },
+  { name: 'Woman’s Fashion', href: '#' },
+  { name: 'Men’s Fashion', href: '#' },
+  { name: 'Electronics', href: '#' },
+  { name: 'Home & Lifestyle', href: '#' },
+  { name: 'Groceries & Pets', href: '#' },
+  { name: 'Health & Beauty', href: '#' },
+  { name: 'Baby’s & Toys', href: '#' },
+  { name: 'Sports & Outdoor', href: '#' },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 function ProductListings() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
+  const [data, setData] = useState({});
+
+  const fetchData = async (page) => {
+    const res = await axios.get(
+      `http://127.0.0.1:7000/api/v1/products/?page=${page}&limit=12`
+    );
+    setData(res.data);
+  };
+  useEffect(() => {
+    fetchData(1);
+  }, []);
 
   return (
     <div className="bg-white">
@@ -135,10 +148,10 @@ function ProductListings() {
                               href={option.href}
                               className={classNames(
                                 option.current
-                                  ? "font-medium text-gray-900"
-                                  : "text-gray-500",
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm"
+                                  ? 'font-medium text-gray-900'
+                                  : 'text-gray-500',
+                                active ? 'bg-gray-100' : '',
+                                'block px-4 py-2 text-sm'
                               )}
                             >
                               {option.name}
@@ -186,9 +199,9 @@ function ProductListings() {
                 </ul>
               </form>
               <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6  lg:max-w-7xl lg:px-8">
-                <Cards />
+                <Cards products={data.products} />
                 <div className="flex justify-center mt-4">
-                  <Pagination />
+                  {/* <Pagination count={data.count} fetchData={fetchData} /> */}
                 </div>
               </div>
             </div>

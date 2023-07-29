@@ -26,7 +26,7 @@ function Header() {
   // }, []);
   return (
     <>
-      <nav className="bg-[#272525] border-gray-200 dark:bg-gray-900">
+      <nav className="bg-[#272525] border-gray-200 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center">
             <img src="./assets/logo.png" className="h-8 mr-3" alt=" Logo" />
