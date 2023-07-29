@@ -4,11 +4,10 @@ import "./AboutUs.css";
 function AboutUs() {
   return (
     <section className="aboutUs">
-        <hr/>
       <div className="Container_About">
         <div className="about_Img">
           <img
-            src="https://images.pexels.com/photos/11440769/pexels-photo-11440769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://media.discordapp.net/attachments/1125737184180326440/1134816297553760396/imac-apple-mockup-app-38544.png?width=997&height=662"
             alt="AboutUs"
           />
         </div>

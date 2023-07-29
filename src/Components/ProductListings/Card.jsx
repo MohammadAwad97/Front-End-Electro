@@ -17,7 +17,7 @@ function Card({ product }) {
         {product.price}
       </p>
       <button className="bg-[#db4444] hover:bg-[#B43838] text-white font-bold py-2 px-4 rounded w-full mt-4">
-        Order now!
+       Add
       </button>
     </a>
   );
