@@ -7,7 +7,7 @@ function Features() {
       <div className="icon_info">
         <div className="out_cont">
           <div className="in_cont">
-            <i class="fa-solid fa-truck" style={{ color: "#ffffff" }}></i>
+            <i class="fa-solid fa-truck" style={{ color: "#f2ee1b" }}></i>
           </div>
         </div>
         <h2>FREE AND FAST DELIVERY</h2>
@@ -17,7 +17,7 @@ function Features() {
       <div className="icon_info">
         <div className="out_cont">
           <div className="in_cont">
-            <i class="fa-solid fa-headphones" style={{ color: "#ffffff" }}></i>
+            <i class="fa-solid fa-headphones" style={{ color: "#f2ee1b" }}></i>
           </div>
         </div>
         <h2>FREE AND FAST DELIVERY</h2>
@@ -27,7 +27,7 @@ function Features() {
       <div className="icon_info">
         <div className="out_cont">
           <div className="in_cont">
-            <i class="fa-solid fa-money-check" style={{ color: "#ffffff" }}></i>
+            <i class="fa-solid fa-money-check" style={{ color: "#f2ee1b" }}></i>
           </div>
         </div>
         <h2>FREE AND FAST DELIVERY</h2>

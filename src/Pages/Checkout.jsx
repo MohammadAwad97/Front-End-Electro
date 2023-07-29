@@ -21,14 +21,7 @@ const Checkout = () => {
                 Check out
               </p>
             </div>
-            <div className="mt-2">
-              <Link
-                to="#"
-                className="text-base leading-4 underline  hover:text-gray-800 text-gray-600"
-              >
-                Back to my bag
-              </Link>
-            </div>
+
             <div className="mt-12">
               <p className="text-xl font-semibold leading-5 text-gray-800">
                 Shipping Details
@@ -251,7 +244,7 @@ const Checkout = () => {
                 placeholder="Phone Number"
               />
             </div>
-            <button className="focus:outline-none  focus:ring-gray-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800">
+            <button className="focus:outline-none  focus:ring-gray-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-[#b5b188] py-4 w-full md:w-4/12 lg:w-full text-white bg-[#272525]">
               Proceed to payment
             </button>
             <div className="mt-4 flex justify-start items-center w-full">
@@ -263,45 +256,45 @@ const Checkout = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col justify-start items-start bg-gray-50 w-full p-6 md:p-14">
+          <div className="flex flex-col justify-start items-start bg-[#272525] w-full p-6 md:p-14">
             <div>
-              <h1 className="text-2xl font-semibold leading-6 text-gray-800">
+              <h1 className="text-2xl font-semibold leading-6 text-white">
                 Order Summary
               </h1>
             </div>
             <div className="flex mt-7 flex-col items-end w-full space-y-6">
               <div className="flex justify-between w-full items-center">
-                <p className="text-lg leading-4 text-gray-600">Total items</p>
-                <p className="text-lg font-semibold leading-4 text-gray-600">
+                <p className="text-lg leading-4 text-white">Total items :</p>
+                <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
                   20
                 </p>
               </div>
               <div className="flex justify-between w-full items-center">
-                <p className="text-lg leading-4 text-gray-600">Total Charges</p>
-                <p className="text-lg font-semibold leading-4 text-gray-600">
+                <p className="text-lg leading-4 text-white">Total Charges :</p>
+                <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
                   $2790
                 </p>
               </div>
               <div className="flex justify-between w-full items-center">
-                <p className="text-lg leading-4 text-gray-600">
-                  Shipping charges
+                <p className="text-lg leading-4 text-white">
+                  Shipping charges:
                 </p>
-                <p className="text-lg font-semibold leading-4 text-gray-600">
+                <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
                   $90
                 </p>
               </div>
               <div className="flex justify-between w-full items-center">
-                <p className="text-lg leading-4 text-gray-600">Sub total </p>
-                <p className="text-lg font-semibold leading-4 text-gray-600">
+                <p className="text-lg leading-4 text-white">Sub total :</p>
+                <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
                   $3520
                 </p>
               </div>
             </div>
             <div className="flex justify-between w-full items-center mt-32">
-              <p className="text-xl font-semibold leading-4 text-gray-800">
-                Estimated Total{' '}
+              <p className="text-xl font-semibold leading-4 text-white">
+                Estimated Total :{' '}
               </p>
-              <p className="text-lg font-semibold leading-4 text-gray-800">
+              <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
                 $2900
               </p>
             </div>

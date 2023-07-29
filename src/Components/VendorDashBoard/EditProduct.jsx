@@ -1,6 +1,46 @@
-import React from "react";
+import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function EditProduct() {
+  const backNav = useNavigate();
+  const { id } = useParams();
+  const [products, setProducts] = useState({});
+  //
+
+  //   this for send request one time when open page
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://127.0.0.1:7000/api/v1/products/${id}`
+        );
+        setProducts(response.data.product);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const handleInputChange = (e) => {
+    setProducts({ ...products, [e.target.name]: e.target.value });
+  };
+  //
+  const handelSubmit = async () => {
+    try {
+      const updatedProduct = await axios.patch(
+        `http://127.0.0.1:7000/api/v1/products/${id}`,
+        products
+      );
+      console.log('Product update successfully', updatedProduct);
+      backNav('/maindashboard/product');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <div className="  mb-6 p-4 sm:ml-64 grid justify-center items-center h-screen">
@@ -12,7 +52,9 @@ export default function EditProduct() {
             Name:
           </label>
           <input
-            id="name"
+            onChange={handleInputChange}
+            value={products.name}
+            name="name"
             type="text"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
@@ -25,7 +67,9 @@ export default function EditProduct() {
             Description:
           </label>
           <input
-            id="description"
+            value={products.desc}
+            onChange={handleInputChange}
+            name="desc"
             type="text"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
@@ -38,7 +82,9 @@ export default function EditProduct() {
             Category:
           </label>
           <input
-            id="cat"
+            onChange={handleInputChange}
+            value={products.cat}
+            name="cat"
             type="text"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
@@ -51,7 +97,9 @@ export default function EditProduct() {
             Image
           </label>
           <input
-            id="img"
+            onChange={handleInputChange}
+            value={products.img}
+            name="img"
             type="text"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
@@ -64,7 +112,9 @@ export default function EditProduct() {
             Quantity:
           </label>
           <input
-            id="qu"
+            onChange={handleInputChange}
+            value={products.quantity}
+            name="quantity"
             type="text"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
@@ -77,12 +127,15 @@ export default function EditProduct() {
             Price:
           </label>
           <input
-            id="price"
+            onChange={handleInputChange}
+            value={products.price}
+            name="price"
             type="text"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
         </div>
         <button
+          onClick={handelSubmit}
           type="button"
           className="  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >

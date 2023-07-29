@@ -13,6 +13,9 @@
   padding-right: 3em;
   padding-bottom: 2em;
   cursor: pointer;
+  
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
 .category_container hr {
@@ -26,12 +29,13 @@
   align-items: center;
   width: 20%;
   gap: 1em;
+  color: white;
 }
 
 .title > .redBox {
   width: 20px;
   height: 37px;
-  background-color: red;
+  background-color:#f2ee1b;
   border-radius: 6px;
 }
 
@@ -47,6 +51,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1em;
+ 
 }
 
 .cate_datail {
@@ -58,8 +63,27 @@
   align-items: center;
   height: 100px;
   padding: 5em 0 !important;
+  background-color: #272525;
+  border-radius: .6rem;
 }
 
 .cate_datail > i {
   font-size: 2em;
+
+  color: white ;
+}
+
+.cate_datail > p{
+
+  color: white;
+}
+
+.cate_datail:hover > i {
+
+  color: #f2ee1b;
+}
+
+.cate_datail:hover > p {
+
+  color: #f2ee1b;
 }
