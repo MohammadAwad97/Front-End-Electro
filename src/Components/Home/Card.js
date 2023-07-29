@@ -15,10 +15,10 @@ function Card({ product }) {
         />
       </div>
       <h3 className="mt-4 text-m px-2 pl-4 pb-2">{product.name}</h3>
-      <p className="mt-4  px-2  text-gray-500 text-sm pl-4 pb-2">
+      <p className="mt-4  px-2  text-gray-500 text-sm pl-4 pb-2 h-[150px] ">
         {product.desc}
       </p>
-      <p className="px-2 mt-2 text-lg font-medium text-gray-900 pl-4 pb-2">
+      <p className="px-2 mt-2 text-lg font-medium text-gray-900 pl-4 pb-2 pt-2">
         {product.price} $
       </p>
     </a>

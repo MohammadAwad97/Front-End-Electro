@@ -1,17 +1,17 @@
 function Card({ product }) {
   return (
     <a key={product._id} className="group shadow-lg ">
-      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+      <div className=" flex justify-center aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
         <img
           src={product.img}
           alt="img"
-          className="h-full w-full object-cover object-center group-hover:opacity-75 "
+          className="h-60 w-full object-cover object-center group-hover:opacity-75 "
         />
       </div>
-      <h3 className="mt-4 text-m px-2">{product.name}</h3>
-      <p className="mt-4  px-2  text-gray-500">{product.desc}</p>
+      <h3 className="mt-4 text-m px-2 h-[30px] pb-[40px]">{product.name}</h3>
+      <p className="mt-4  px-2  text-gray-500 text-sm h-[190px]">{product.desc}</p>
       <p className="px-2 mt-2 text-lg font-medium text-gray-900 ">
-        {product.price}
+        {product.price}$
       </p>
       <button className="bg-[#272525]  hover:bg-[#b5b188]   hover:text-black   text-white font-bold py-2 px-4 rounded w-full mt-4">
        Add
