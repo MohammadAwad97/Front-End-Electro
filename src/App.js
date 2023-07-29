@@ -15,6 +15,7 @@ import EditProduct from './Components/VendorDashBoard/EditProduct';
 import LoginVendor from './Components/VendorDashBoard/LoginVendor';
 import Inbox from './Components/VendorDashBoard/Inbox';
 import ProductList from './Components/VendorDashBoard/ProductList';
+import Cart from './Pages/Cart';
 function App() {
   return (
     <>
@@ -23,7 +24,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart/>} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/maindashboard" element={<MainDashBoard />}>
