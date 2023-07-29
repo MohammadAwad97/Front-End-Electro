@@ -11,6 +11,7 @@ export default function MainDashBoard() {
   return (
     <>
       <Aside />
+      
       <Outlet />
     </>
   );
