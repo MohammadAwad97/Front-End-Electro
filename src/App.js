@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 import {
   Footer,
   Header,
@@ -9,7 +9,12 @@ import {
   MainDashBoard,
   NotFound,
   Checkout,
-} from "./Pages/index";
+} from './Pages/index';
+import AddProduct from './Components/VendorDashBoard/AddProduct';
+import EditProduct from './Components/VendorDashBoard/EditProduct';
+import LoginVendor from './Components/VendorDashBoard/LoginVendor';
+import Inbox from './Components/VendorDashBoard/Inbox';
+import ProductList from './Components/VendorDashBoard/ProductList';
 function App() {
   return (
     <>
@@ -20,7 +25,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/maindashboard" element={<MainDashBoard />} />
+        <Route path="/maindashboard" element={<MainDashBoard />}>
+          <Route path="login" element={<LoginVendor />} />
+          <Route path="add" element={<AddProduct />} />
+          <Route path="product/:id" element={<EditProduct />} />
+          <Route path="inbox" element={<Inbox />} />
+          <Route path="product" element={<ProductList />} />
+        </Route>
+
         <Route path="/product" element={<ProductListingsPage />} />
       </Routes>
       <Footer />
