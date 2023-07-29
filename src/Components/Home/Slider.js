@@ -24,28 +24,29 @@ function Slider() {
 
             <div className="slide first">
               <img
-                src="https://media.discordapp.net/attachments/1125737184180326440/1134475050427351070/free-photo-of-close-up-of-a-playstation-joystick.png?width=670&height=670"
-                alt=""
+                src="https://www.apple.com/mideast/iphone/home/bo/images/meta/iphone__btp62hy2cbea_og.jpg"
+                alt="img"
               />
             </div>
             <div className="slide">
               <img
-                src="https://media.discordapp.net/attachments/1125737184180326440/1134478387667271722/8ca4cdd64357ecddbf1f4c9109800ac3.png?width=670&height=670"
-                alt=""
+                src="https://m.economictimes.com/thumb/msid-99669954,width-7046,height-3963,resizemode-4,imgsize-1040534/best-gaming-headphones-in-india-under-rs-2500-for-crystal-clear-sound.jpg"
+                alt="img"
               />
             </div>
             <div className="slide">
               <img
-                src="https://media.discordapp.net/attachments/1125737184180326440/1134478458689441884/4eacc9a16fd0961ae8f70d5a26c29363.png?width=681&height=670"
-                alt=""
+                src="https://assets2.razerzone.com/images/pnx.assets/7fb8deac5d3c73e360bc687ed62be6cf/gaming-laptops-og-image.png"
+                alt="img"
               />
             </div>
             <div className="slide">
               <img
-                src="https://media.discordapp.net/attachments/1125737184180326440/1134474950900732007/free-photo-of-black-wireless-headphones.png?width=670&height=670"
-                alt=""
+                src="https://media.discordapp.net/attachments/1125737184180326440/1134790077185278063/tcl-6-series-tv-r6-2022-6396.png?width=1177&height=662"
+                alt="img"
               />
             </div>
+         
             <div className="navigation-auto">
               <div className="auto-btn1"></div>
               <div className="auto-btn2"></div>

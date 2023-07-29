@@ -4,12 +4,11 @@ import './OurTeam.css';
 function OurTeam() {
   return (
     <section className="ourTeam">
-        <hr/>
         <div className="title">
         <div className="redBox"></div>
         <p>Our Team</p>
       </div>
-      <h1 className="text-4xl browse-by">Meet Our Team</h1>
+      <h1 className="text-4xl browse-by text-white">Meet Our Team</h1>
       <div className="ourTeam_cont">
         <div className="member_Card">
           <div className='memImg'>

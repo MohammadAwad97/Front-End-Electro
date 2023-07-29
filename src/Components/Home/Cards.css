@@ -6,10 +6,12 @@
 
 
 .explore_Products {
-    padding-top: 0;
-    padding-left: 3em;
-    padding-right: 3em;
-    padding-bottom: 0;
+  
+ 
+    background-color: #272525;
+
+
+    padding: 2rem 3rem  ;
 }
 
 .explore_Products > hr {
@@ -30,5 +32,6 @@
 .explore_Products > h2 {
     padding-top: 0.5em;
     margin-bottom: 1em;
+ 
 }
 
