@@ -9,14 +9,16 @@ import Features from "../Components/Home/Features";
 import AboutUs from "../Components/Home/AboutUs";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import OurTeam from "../Components/Home/OurTeam";
 
 function LandingPage() {
   return (
     <>
       <Slider />
-      <AboutUs />
+      <AboutUs /> 
       <Cards />
       <Category />
+      <OurTeam/>
       <Features />
     </>
   );

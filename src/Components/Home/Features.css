@@ -11,8 +11,9 @@
   flex-wrap: wrap;
   width: 100%;
   gap: 3em;
-  padding-bottom: 2em;
+  padding-bottom: 6em;
   min-height: 200px;
+  padding-top: 3rem;
 }
 
 .icon_info {

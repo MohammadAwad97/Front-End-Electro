@@ -16,8 +16,8 @@ function Card({ product }) {
       <p className="px-2 mt-2 text-lg font-medium text-gray-900 ">
         {product.price}
       </p>
-      <button className="bg-[#db4444] hover:bg-[#B43838] text-white font-bold py-2 px-4 rounded w-full mt-4">
-        Order now!
+      <button className="bg-[#272525]  hover:bg-[#b5b188]   hover:text-black   text-white font-bold py-2 px-4 rounded w-full mt-4">
+       Add
       </button>
     </a>
   );
