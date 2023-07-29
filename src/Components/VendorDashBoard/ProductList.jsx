@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 export default function ProductList() {
   // this for save product from Api
   const [products, setProducts] = useState([]);
@@ -8,7 +9,7 @@ export default function ProductList() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:7000/api/v1/products/vendor/64ba8084db21730031b5896a"
+        'http://127.0.0.1:7000/api/v1/products/vendor/64ba8084db21730031b5896a'
       );
       console.log(response.data.vendorProducts);
       setProducts(response.data.vendorProducts);
@@ -49,14 +50,12 @@ export default function ProductList() {
         <td className="px-6 py-4">{el.cat}</td>
         <td className="px-6 py-4">`$${el.price}`</td>
         <td className="px-6 py-4 flex gap-2">
-          <p
+          <Link
+            to={`${el._id}`}
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-            onClick={() => {
-              // use navgite to send vendor to edit page
-            }}
           >
             Edit
-          </p>
+          </Link>
           <p
             onClick={() => removeProduct(el._id)}
             className="font-medium text-red-600 dark:text-red-500 hover:underline"
