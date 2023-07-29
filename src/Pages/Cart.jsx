@@ -78,9 +78,11 @@ const Cart = () => {
               <p className="text-sm text-gray-700">including VAT</p>
             </div>
           </div>
-          <button className="mt-6 w-full rounded-md bg-[#272525] py-1.5 font-medium text-white  hover:bg-[#b5b188]   hover:text-black">
-            Check out
-          </button>
+          <Link to="/checkout">
+            <button className="mt-6 w-full rounded-md bg-[#272525] py-1.5 font-medium text-white  hover:bg-[#b5b188]   hover:text-black">
+              Check out
+            </button>
+          </Link>
           <button
             onClick={removeAllItems}
             className="mt-6 w-full rounded-md bg-[#272525] py-1.5 font-medium text-white  hover:bg-[#b5b188]   hover:text-black"

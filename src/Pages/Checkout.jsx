@@ -249,7 +249,7 @@ const Checkout = () => {
             </button>
             <div className="mt-4 flex justify-start items-center w-full">
               <Link
-                to="#"
+                to="/cart"
                 className="text-base leading-4 underline focus:outline-none focus:text-gray-500  hover:text-gray-800 text-gray-600"
               >
                 Back to my bag
