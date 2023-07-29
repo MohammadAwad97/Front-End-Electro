@@ -6,24 +6,22 @@ import axios from 'axios';
 
 function Header() {
   const [userActive, setUserActive] = useState({});
-  const [isShow, setIsShow] = useState(false);
 
   const userId = sessionStorage.getItem('currentUserId');
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     try {
-  //       const res = await axios.get(
-  //         `http://127.0.0.1:7000/api/v1/customers/${userId}`
-  //       );
-  //       setUserActive(res.data.customer);
-  //       setIsShow(!isShow); // Set isShow to false after fetching user data
-  //     } catch (e) {
-  //       // Handle errors
-  //     }
-  //   };
-  //   fetchUser();
-  // }, []);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await axios.get(
+          `http://127.0.0.1:7000/api/v1/customers/${userId}`
+        );
+        setUserActive(res.data.customer);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchUser();
+  }, []);
   return (
     <>
       <nav className="bg-[#272525] border-gray-200 ">
@@ -34,7 +32,7 @@ function Header() {
               ElectroTrendy
             </span>
           </Link>
-          {isShow ? (
+          {userId ? (
             <>
               <div className="flex items-center md:order-2">
                 <button
@@ -70,7 +68,6 @@ function Header() {
                         to="/login"
                         onClick={() => {
                           sessionStorage.clear();
-                          setIsShow(!isShow);
                         }}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                       >
