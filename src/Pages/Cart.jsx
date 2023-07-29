@@ -2,135 +2,127 @@ import React from 'react';
 
 const Cart = () => {
   return (
-    <div className="h-screen bg-gray-300">
-      <div className="py-12">
-        <div className="max-w-md mx-auto bg-gray-100 flex justify-around g-4 shadow-lg rounded-lg  md:max-w-5xl ">
-          <div className="md:flex   g-4  ">
-            <div className="w-full p-4 px-5 py-5">
-              <div className="md:grid md:grid-cols-2 gap-2 ">
-                <div className="col-span-2 p-5">
-                  <h1 className="text-xl font-medium ">Shopping Cart</h1>
-                  <div className="flex justify-between items-center mt-6 pt-6">
-                    <div className="flex  items-center">
-                      <img
-                        src="https://i.imgur.com/EEguU02.jpg"
-                        width={60}
-                        className="rounded-full  "
-                      />
-                      <div className="flex flex-col ml-3">
-                        <span className="md:text-md font-medium">
-                          Chicken momo
-                        </span>
-                        <span className="text-xs font-light text-gray-400">
-                          #41551
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center">
-                      <div className="pr-8 flex ">
-                        <span className="font-semibold">-</span>
-                        <input
-                          type="text"
-                          className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                          defaultValue={1}
-                        />
-                        <span className="font-semibold">+</span>
-                      </div>
-                      <div className="pr-8 ">
-                        <span className="text-xs font-medium">$10.50</span>
-                      </div>
-                      <div>
-                        <i className="fa fa-close text-xs font-medium" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center pt-6 mt-6 border-t">
-                    <div className="flex  items-center">
-                      <img
-                        src="https://i.imgur.com/Uv2Yqzo.jpg"
-                        width={60}
-                        className="rounded-full "
-                      />
-                      <div className="flex flex-col ml-3 ">
-                        <span className="text-md font-medium w-auto">
-                          Spicy Mexican potatoes
-                        </span>
-                        <span className="text-xs font-light text-gray-400">
-                          #66999
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center">
-                      <div className="pr-8 flex">
-                        <span className="font-semibold">-</span>
-                        <input
-                          type="text"
-                          className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                          defaultValue={1}
-                        />
-                        <span className="font-semibold">+</span>
-                      </div>
-                      <div className="pr-8">
-                        <span className="text-xs font-medium">$10.50</span>
-                      </div>
-                      <div>
-                        <i className="fa fa-close text-xs font-medium" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center mt-6 pt-6 border-t">
-                    <div className="flex  items-center">
-                      <img
-                        src="https://i.imgur.com/xbTAITF.jpg"
-                        width={60}
-                        className="rounded-full "
-                      />
-                      <div className="flex flex-col ml-3 ">
-                        <span className="text-md font-medium">Breakfast</span>
-                        <span className="text-xs font-light text-gray-400">
-                          #86577
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center">
-                      <div className="pr-8 flex">
-                        <span className="font-semibold">-</span>
-                        <input
-                          type="text"
-                          className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                          defaultValue={1}
-                        />
-                        <span className="font-semibold">+</span>
-                      </div>
-                      <div className="pr-8">
-                        <span className="text-xs font-medium">$10.50</span>
-                      </div>
-                      <div>
-                        <i className="fa fa-close text-xs font-medium" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center mt-6 pt-6 border-t">
-                    <div className="flex items-center">
-                      <i className="fa fa-arrow-left text-sm pr-2" />
-                      <span className="text-md  font-medium text-blue-500">
-                        Continue Shopping
-                      </span>
-                    </div>
-                    <div className="flex justify-center items-end">
-                      <span className="text-sm font-medium text-gray-400 mr-1">
-                        Subtotal:
-                      </span>
-                      <span className="text-lg font-bold text-gray-800 ">
-                        {' '}
-                        $24.90
-                      </span>
-                    </div>
-                  </div>
+    <div className="min-h-screen  pt-20">
+      <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+      <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+        <div className="rounded-lg md:w-2/3">
+          <div className="justify-between mb-6 rounded-lg bg-[#272525] p-6 shadow-md sm:flex sm:justify-start ">
+            <img
+              src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt="product-image"
+              className="w-full rounded-lg sm:w-40"
+            />
+            <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between ">
+              <div className="mt-5 sm:mt-0">
+                <h2 className="text-lg font-bold text-white">
+                  Nike Air Max 2019
+                </h2>
+                <p className="mt-1 text-xs text-white">36EU - 4US</p>
+              </div>
+              <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                <div className="flex items-center border-gray-100">
+                  <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50">
+                    -
+                  </span>
+                  <input
+                    className="h-8 w-8 border bg-white text-center text-xs outline-none"
+                    type="number"
+                    defaultValue={2}
+                    min={1}
+                  />
+                  <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50  hover:text-black">
+                    +
+                  </span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <p className="text-sm text-white">259.000 ₭</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="h-5 w-5 cursor-pointer  text-white duration-150 hover:text-red-500"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
+          <div className="justify-between mb-6 rounded-lg bg-[#272525] p-6 shadow-md sm:flex sm:justify-start">
+            <img
+              src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1131&q=80"
+              alt="product-image"
+              className="w-full rounded-lg sm:w-40"
+            />
+            <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+              <div className="mt-5 sm:mt-0">
+                <h2 className="text-lg font-bold text-white">
+                  Nike Air Max 2019
+                </h2>
+                <p className="mt-1 text-xs text-white">36EU - 4US</p>
+              </div>
+              <div className="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                <div className="flex items-center border-gray-100">
+                  <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50">
+                    -
+                  </span>
+                  <input
+                    className="h-8 w-8 border bg-white text-center text-xs outline-none"
+                    type="number"
+                    defaultValue={2}
+                    min={1}
+                  />
+                  <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50">
+                    +
+                  </span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <p className="text-sm text-white">259.000 ₭</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="h-5 w-5 cursor-pointer text-white duration-150 hover:text-red-500"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+          <div className="mb-2 flex justify-between">
+            <p className="text-gray-700">Subtotal</p>
+            <p className="text-gray-700">$129.99</p>
+          </div>
+          <div className="flex justify-between">
+            <p className="text-gray-700">Shipping</p>
+            <p className="text-gray-700">$4.99</p>
+          </div>
+          <hr className="my-4" />
+          <div className="flex justify-between">
+            <p className="text-lg font-bold">Total</p>
+            <div className>
+              <p className="mb-1 text-lg font-bold">$134.98 USD</p>
+              <p className="text-sm text-gray-700">including VAT</p>
+            </div>
+          </div>
+          <button className="mt-6 w-full rounded-md bg-[#272525] py-1.5 font-medium text-white  hover:bg-[#b5b188]   hover:text-black">
+            Check out
+          </button>
         </div>
       </div>
     </div>
