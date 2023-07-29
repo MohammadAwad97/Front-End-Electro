@@ -25,10 +25,10 @@ const Register = () => {
       );
 
       console.log(res);
-      login('/');
 
       sessionStorage.setItem('currentUser', res.data.token);
       sessionStorage.setItem('currentUserId', res.data.data.customer._id);
+      login('/');
     } catch (e) {
       console.log(e);
 

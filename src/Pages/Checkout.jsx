@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import CartContext from '../store/cartContext';
+import Swal from 'sweetalert2';
 const Checkout = () => {
+  const nav = useNavigate();
+  const { cart, totalPrice, removeAllItems } = useContext(CartContext);
   const [dropdown1, setDropdown1] = useState(false);
   const [dropdown2, setDropdown2] = useState(false);
   const [dropdown3, setDropdown3] = useState(false);
@@ -244,7 +249,14 @@ const Checkout = () => {
                 placeholder="Phone Number"
               />
             </div>
-            <button className="focus:outline-none  focus:ring-gray-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-[#b5b188] py-4 w-full md:w-4/12 lg:w-full text-white bg-[#272525]">
+            <button
+              onClick={() => {
+                Swal.fire('thank you for buying');
+                removeAllItems();
+                nav('/');
+              }}
+              className="focus:outline-none  focus:ring-gray-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-[#b5b188] py-4 w-full md:w-4/12 lg:w-full text-white bg-[#272525]"
+            >
               Proceed to payment
             </button>
             <div className="mt-4 flex justify-start items-center w-full">
@@ -266,13 +278,13 @@ const Checkout = () => {
               <div className="flex justify-between w-full items-center">
                 <p className="text-lg leading-4 text-white">Total items :</p>
                 <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
-                  20
+                  {cart.length}
                 </p>
               </div>
               <div className="flex justify-between w-full items-center">
-                <p className="text-lg leading-4 text-white">Total Charges :</p>
+                <p className="text-lg leading-4 text-white">Discount :</p>
                 <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
-                  $2790
+                  1%
                 </p>
               </div>
               <div className="flex justify-between w-full items-center">
@@ -280,13 +292,13 @@ const Checkout = () => {
                   Shipping charges:
                 </p>
                 <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
-                  $90
+                  100
                 </p>
               </div>
               <div className="flex justify-between w-full items-center">
                 <p className="text-lg leading-4 text-white">Sub total :</p>
                 <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
-                  $3520
+                  {totalPrice - 100}
                 </p>
               </div>
             </div>
@@ -295,7 +307,7 @@ const Checkout = () => {
                 Estimated Total :{' '}
               </p>
               <p className="text-lg font-semibold leading-4 text-[#f2ee1b]">
-                $2900
+                {totalPrice - totalPrice * (1 / 100)}$
               </p>
             </div>
           </div>
