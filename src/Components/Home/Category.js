@@ -13,7 +13,6 @@ function Category() {
       <section className="cate_Cards">
         <div className="cate_datail">
           <i class="fa-solid fa-mobile-screen"></i>
-
           <p>Phones</p>
         </div>
         <div className="cate_datail">

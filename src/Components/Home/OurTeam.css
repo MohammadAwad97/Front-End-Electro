@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ourTeam {
+    width: 100%;
+    padding: 1em 3em;
+}
+.ourTeam > hr {
+    margin-bottom: 1em;
+}
+.ourTeam > h1 {
+    margin-bottom: 1em;
+}
+
+
+.ourTeam_cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+.member_Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.member_Card > .memImg >img {
+    width: 200px;
+    border-radius: 50%;
+    border: 2px solid rgb(33, 33, 107);
+}
+
+
+.member_Card > .name {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.member_Card > .stack {
+    color: rgb(23, 91, 115);
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+
