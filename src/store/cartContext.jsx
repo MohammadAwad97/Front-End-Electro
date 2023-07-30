@@ -11,12 +11,16 @@ export function CartProvider({ children }) {
 
   const customerId = sessionStorage.getItem('currentUserId');
 
-  const getCart = () => {
-    axios
-      .get(`http://127.0.0.1:7000/api/v1/cart/${customerId}`)
-      .then(({ data }) => {
-        setCart(data.cart.productList);
-      });
+  const getCart = async () => {
+    try {
+      axios
+        .get(`http://127.0.0.1:7000/api/v1/cart/${customerId}`)
+        .then(({ data }) => {
+          setCart(data.cart.productList);
+        });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   //add  to the cart
