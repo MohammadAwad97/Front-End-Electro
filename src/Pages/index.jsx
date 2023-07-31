@@ -1,12 +1,11 @@
-import Footer from "../Components/Footer/Footer";
-import Header from "../Components/Header/Header";
-import LandingPage from "./LandingPage";
-import Login from "../Components/Login/Login";
-import ProductListingsPage from "./ProductListingsPage";
-import Register from "../Components/Register/Register";
-import MainDashBoard from "./MainDashBoard";
-import NotFound from "./NotFound";
-import Checkout from "./Checkout";
+import Footer from '../Components/Footer/Footer';
+import Header from '../Components/Header/Header';
+import LandingPage from './LandingPage';
+import Login from '../Components/Login/Login';
+import ProductListingsPage from './ProductListingsPage';
+import Register from '../Components/Register/Register';
+import NotFound from './NotFound';
+import Checkout from './Checkout';
 export {
   Footer,
   Header,
@@ -14,7 +13,6 @@ export {
   Login,
   ProductListingsPage,
   Register,
-  MainDashBoard,
   NotFound,
   Checkout,
 };
