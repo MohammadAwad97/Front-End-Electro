@@ -13,7 +13,7 @@ function Card({ product }) {
     }
   };
   return (
-    <a key={product._id} className="group shadow-lg ">
+    <div key={product._id} className="group shadow-lg">
       <div className=" flex justify-center aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
         <img
           src={product.img}
@@ -34,7 +34,7 @@ function Card({ product }) {
       >
         Add
       </button>
-    </a>
+    </div>
   );
 }
 
