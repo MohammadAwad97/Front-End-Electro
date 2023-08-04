@@ -11,40 +11,44 @@ function OurTeam() {
       <h1 className="text-4xl browse-by text-white">Meet Our Team</h1>
       <div className="ourTeam_cont">
         <div className="member_Card">
-          <div className='memImg'>
+          <div className='memImg h-50'>
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlpl2g7QUZht_vjdmqQ4yBQWzcTiVne04ikqLeG3At65UNYikUBJgmUM1_FbS6yLQzVzg&usqp=CAU"
+              src="https://trello.com/1/cards/64c2aca04fc09493c05bd9be/attachments/64c62f1290925d5a30509872/previews/64c62f1390925d5a3050997e/download/faten__1_-removebg-preview.png"
               alt="member1"
+            
               />
               </div>
             <p className='name'>Faten Hussien</p>
             <p className='stack'>Full stack Developer</p>
         </div>
         <div className="member_Card">
-          <div className='memImg'>
+          <div className='memImg h-50'>
             <img
-              src="https://blockworks-co.imgix.net/wp-content/uploads/2023/02/Alex-headshot.jpeg"
+              src="https://trello.com/1/cards/64c2acadde97dfe2b8faf1aa/attachments/64c634b53aa01ae3a79162f7/previews/64c634b53aa01ae3a791652e/download/IbrahimJamalAbuFarha.png"
               alt="member2"
+       
               />
               </div>
             <p className='name'>Ibrahim Abu Farha</p>
             <p className='stack'>Full stack Developer</p>
         </div>
         <div className="member_Card">
-          <div className='memImg'>
+          <div className='memImg h-50' >
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfHln2vtU9fz-LPVUc2UrMhATIEXMoLP5Ghgt0DrhfZLRcwf_vEYmYtAzdFD81Z8SlwRU&usqp=CAU"
+              src="https://media.discordapp.net/attachments/1125737184180326440/1135537281822900234/image.png?width=733&height=532"
               alt="member1"
+            
               />
               </div>
             <p className='name'>Mohammad Awad</p>
             <p className='stack'>Full stack Developer</p>
         </div>
         <div className="member_Card">
-          <div className='memImg'>
+          <div className='memImg h-50'>
             <img
-              src="https://uploads-ssl.webflow.com/61ede842398e1b8a50ce8fd0/63d0d2b6e0e8924703331d23_d77c1458-cf20-42ec-991f-1aa58c1bccc0.png"
+              src="https://trello.com/1/cards/64c60edc16eeb4435732fb53/attachments/64c631ba4c7a118d37a41ddb/previews/64c631bb4c7a118d37a41f25/download/Abdelrahman_Haroun.jpeg.jpg"
               alt="member1"
+            
               />
               </div>
             <p className='name'>Abdelrahman Haroun</p>

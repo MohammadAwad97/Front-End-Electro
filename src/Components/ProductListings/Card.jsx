@@ -33,6 +33,10 @@ function Card({ product }) {
           {' '}
           {product.desc}
         </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-200 line-clamp-3 ">
+          {' '}
+          ${product.price}
+        </p>
         <p
           onClick={handelClick}
           className="inline-flex items-center cursor-pointer justify-center w-full px-3 py-2 font-medium text-center text-white  rounded-lg  hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600  dark:focus:ring-blue-800 text-xs bg-[#272525] hover:bg-[#b5b188]"

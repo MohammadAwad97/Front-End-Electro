@@ -38,6 +38,7 @@
   width: 200px;
   border-radius: 50%;
   border: 2px solid #272525;
+  height: 200px;
 }
 
 .member_Card > .name {

@@ -8,7 +8,7 @@ const Cart = () => {
   useEffect(() => {
     getCart();
   }, []);
-  console.log(cart);
+ 
   return (
     <>
       {cart.length > 0 ? (
