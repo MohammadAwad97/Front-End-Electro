@@ -41,13 +41,17 @@ export function CartProvider({ children }) {
     }
   };
   const removeItem = async (productId) => {
-    const { data } = await axios.patch(
-      `http://127.0.0.1:7000/api/v1/cart/removeItem/${customerId}`,
-      {
-        productId,
-      }
-    );
-    setCart(data.productList);
+    try {
+      const { data } = await axios.patch(
+        `http://127.0.0.1:7000/api/v1/cart/removeItem/${customerId}`,
+        {
+          productId,
+        }
+      );
+      setCart(data.productList);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const removeAllItems = async () => {

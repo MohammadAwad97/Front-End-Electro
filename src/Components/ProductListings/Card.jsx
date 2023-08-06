@@ -5,11 +5,15 @@ import { useNavigate } from 'react-router-dom';
 function Card({ product }) {
   const nav = useNavigate();
   const { addItem } = useContext(CartContext);
-  const handelClick = () => {
-    if (sessionStorage.getItem('currentUserId')) {
-      addItem(product._id);
-    } else {
-      nav('/login');
+  const handelClick = async () => {
+    try {
+      if (sessionStorage.getItem('currentUserId')) {
+        addItem(product._id);
+      } else {
+        nav('/login');
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
   return (

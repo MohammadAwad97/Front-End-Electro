@@ -8,7 +8,7 @@ const Cart = () => {
   useEffect(() => {
     getCart();
   }, []);
- 
+
   return (
     <>
       {cart.length > 0 ? (
@@ -97,9 +97,9 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <h1 className="text-[12rem] max-h-fit  p-12 my-10 text-center text-red-700">
-            Empty <span className="text-[#f2ee1b]">Cart</span>
-            <i className="fa-solid fa-trash-can text-red-800 "></i>
+          <h1 className="text-[12rem] max-h-fit  p-12 my-10 text-center text-black">
+            Empty <span className="text-black">Cart</span>
+            <i className="fa-solid fa-trash-can text-[#f2ee1b] "></i>
           </h1>
         </>
       )}
